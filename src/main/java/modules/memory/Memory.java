@@ -472,7 +472,7 @@ public class Memory {
 	public static boolean replace (String path, String oldValue, String newValue, boolean ignoreCase,
 	                               boolean keywordIsLine, long line) {
 		if (!find(path, oldValue, ignoreCase, keywordIsLine)) {
-			logger.info("Value {} wasn't found", oldValue);
+			logger.info(VALUE_WASNT_FOUND, oldValue);
 			return false;
 		}
 		
@@ -492,7 +492,7 @@ public class Memory {
 	public static boolean replaceFrom (String path, String oldValue, String newValue, boolean ignoreCase,
 	                                   boolean keywordIsLine, long start) {
 		if (!find(path, oldValue, ignoreCase, keywordIsLine)) {
-			logger.info("Value {} wasn't found", oldValue);
+			logger.info(VALUE_WASNT_FOUND, oldValue);
 			return false;
 		}
 		
@@ -513,7 +513,7 @@ public class Memory {
 	public static boolean replaceAll (String path, String oldValue, String newValue, boolean ignoreCase,
 	                                  boolean keywordIsLine) {
 		if (!find(path, oldValue, ignoreCase, keywordIsLine)) {
-			logger.info("Value {} wasn't found", oldValue);
+			logger.info(VALUE_WASNT_FOUND, oldValue);
 			return false;
 		}
 		

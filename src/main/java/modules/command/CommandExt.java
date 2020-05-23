@@ -6,10 +6,8 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.Role;
 
-import java.awt.*;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -93,18 +91,6 @@ abstract class CommandExt extends Command {
 	
 	protected boolean validate (CommandEvent event) {
 		return preValidate(event);
-	}
-	
-	protected MessageEmbed helpBuilder () {
-		return Main.embed(this.name + " Help",
-		                  null,
-		                  Constants.HELP_ICON,
-		                  getArguments(),
-		                  Color.CYAN,
-		                  null,
-		                  null,
-		                  null,
-		                  Constants.BOT_NAME);
 	}
 }
 
