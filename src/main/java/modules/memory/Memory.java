@@ -1,4 +1,4 @@
-package modules;
+package modules.memory;
 
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -16,6 +16,7 @@ import java.io.*;
 public class Memory {
 	
 	private static final Logger logger = LoggerFactory.getLogger(Memory.class);
+	private static final String VALUE_WASNT_FOUND = "Value {} wasn't found";
 	
 	private Memory () {
 		throw new UnsupportedOperationException();
@@ -450,7 +451,7 @@ public class Memory {
 	public static boolean replace (String path, String oldValue, String newValue, boolean ignoreCase,
 	                               boolean keywordIsLine) {
 		if (!find(path, oldValue, ignoreCase, keywordIsLine)) {
-			logger.info("Value {} wasn't found", oldValue);
+			logger.info(VALUE_WASNT_FOUND, oldValue);
 			return false;
 		}
 		
