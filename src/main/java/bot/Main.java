@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.priv.react.PrivateMessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +28,7 @@ public class Main extends ListenerAdapter {
 	
 	private static JDA jda;
 	private final Logger logger = LoggerFactory.getLogger(Main.class);
+	private long ruleMessageID = 0L;
 	
 	public static void main (String[] args) throws LoginException, InterruptedException {
 		CommandClient commandClient = new CommandClientBuilder().setPrefix(Constants.PREFIX)
@@ -69,28 +71,43 @@ public class Main extends ListenerAdapter {
 	}
 	
 	@Override
+	public void onPrivateMessageReactionAdd (@Nonnull PrivateMessageReactionAddEvent event) {
+		if (event.getMessageIdLong() == ruleMessageID &&
+		    event.getReactionEmote().getName().equalsIgnoreCase(Constants.UPVOTE)) {
+			logger.debug("Entered Reaction If");
+			Objects.requireNonNull(jda.getGuildById(Constants.GUILD_ID))
+			       .addRoleToMember(event.getUserId(),
+			                        Objects.requireNonNull(jda.getRoleById(Constants.RECRUIT)))
+			       .queue();
+		}
+	}
+	
+	@Override
 	public void onMessageReceived (@Nonnull MessageReceivedEvent event) {
 		Message message = event.getMessage();
 		Member member = event.getMember();
 		String content = message.getContentRaw();
 		MessageChannel channel = message.getChannel();
-		Guild guild = event.getGuild();
+		Guild guild = event.getChannelType().equals(ChannelType.TEXT) ? event.getGuild() : null;
 		long id = jda.getSelfUser().getIdLong();
 		final Pattern coffeeLoverPattern = Pattern.compile("i\\s+love\\s+<@!?" + id + ">", Pattern.CASE_INSENSITIVE);
 		
 		
-		if (coffeeLoverPattern.matcher(content).matches()) {
+		if (member != null && guild != null && coffeeLoverPattern.matcher(content).matches()) {
 			channel.sendMessage("Aww, thank you! " + Constants.BLUSH).queue();
-			if (member != null)
-				guild.addRoleToMember(member, Objects.requireNonNull(guild.getRoleById(Constants.COFFEE_LOVER)))
-				     .queue();
+			guild.addRoleToMember(member, Objects.requireNonNull(guild.getRoleById(Constants.COFFEE_LOVER))).queue();
 		}
 	}
 	
 	@Override
 	public void onGuildMemberJoin (@Nonnull GuildMemberJoinEvent event) {
 		event.getMember().getUser().openPrivateChannel().queue(channel -> channel.sendMessage(Constants.WELCOME_RULES)
-		                                                                         .queue(ignored -> {},
+		                                                                         .queue(message -> {
+			                                                                                message.addReaction(Constants.UPVOTE)
+			                                                                                       .queue();
+			                                                                                ruleMessageID =
+					                                                                                message.getIdLong();
+		                                                                                },
 		                                                                                (error -> Objects.requireNonNull(
 				                                                                                jda.getTextChannelById(
 						                                                                                Constants.GENERAL))

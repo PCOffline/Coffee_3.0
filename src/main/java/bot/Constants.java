@@ -15,12 +15,14 @@ public class Constants {
 			"Welcome to McDucks! Please make sure to read the rules and information at #welcome and choose a region " +
 			"at" +
 			" #role-select in order to get your roles!";
+	public static final long GUILD_ID = 697879886081294396L;
 	public static final String WELCOME_RULES = "Welcome to McDucks! Please follow the next rules:" +
 	                                           "\n1. **Don't be toxic**. Swearing and cussing is allowed, however, " +
 	                                           "racism," +
 	                                           " " +
 	                                           "direct insults, bullying and toxicity are not welcome here." +
-	                                           "\n2. **Your nickname in the server must be the same as in Wynncraft**." +
+	                                           "\n2. **Your nickname in the server must be the same as in Wynncraft**" +
+	                                           "." +
 	                                           " Use" +
 	                                           " " +
 	                                           "the `/nick name` command anywhere to change your nickname in Discord" +

@@ -2,6 +2,7 @@
   <dictionary name="Eldar">
     <words>
       <w>mage</w>
+      <w>magicshell</w>
     </words>
   </dictionary>
 </component>
