@@ -97,6 +97,11 @@ public class Main extends ListenerAdapter {
 			channel.sendMessage("Aww, thank you! " + Constants.BLUSH).queue();
 			guild.addRoleToMember(member, Objects.requireNonNull(guild.getRoleById(Constants.COFFEE_LOVER))).queue();
 		}
+		
+		if (channel.getName().equalsIgnoreCase("suggestions")) {
+			message.addReaction(Constants.UPVOTE).queue();
+			message.addReaction(Constants.DOWNVOTE).queue();
+		}
 	}
 	
 	@Override
