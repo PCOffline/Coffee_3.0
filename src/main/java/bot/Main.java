@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
 import javax.security.auth.login.LoginException;
 import java.awt.*;
 import java.util.Objects;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Main extends ListenerAdapter {
@@ -29,23 +30,40 @@ public class Main extends ListenerAdapter {
 	private static JDA jda;
 	private final Logger logger = LoggerFactory.getLogger(Main.class);
 	private long ruleMessageID = 0L;
+	private static final Scanner input = new Scanner(System.in);
 	
 	public static void main (String[] args) throws LoginException, InterruptedException {
-		CommandClient commandClient = new CommandClientBuilder().setPrefix(Constants.PREFIX)
-		                                                        .setOwnerId(Constants.OWNER_ID + "")
+		CommandClient commandClient = new CommandClientBuilder().setPrefix(
+				Constants.PREFIX)
+		                                                        .setOwnerId(
+				                                                        Constants.OWNER_ID +
+				                                                        "")
 		                                                        .useHelpBuilder(true)
-		                                                        .setEmojis(Constants.SUCCESS,
-		                                                                   Constants.WARNING,
-		                                                                   Constants.ERROR)
-		                                                        .setActivity(Activity.playing(Constants.GAME))
-		                                                        .addCommand(new MagicShellCommand())
+		                                                        .setEmojis(
+				                                                        Constants.SUCCESS,
+				                                                        Constants.WARNING,
+				                                                        Constants.ERROR)
+		                                                        .setActivity(
+				                                                        Activity.playing(
+						                                                        Constants.GAME))
+		                                                        .addCommand(
+				                                                        new MagicShellCommand())
 		                                                        .build();
 		
-		jda = JDABuilder.create(Secret.TOKEN, GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
+		jda = JDABuilder.create(Secret.TOKEN,
+		                        GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS))
 		                .addEventListeners(new Main(), commandClient)
 		                .setAutoReconnect(true)
 		                .build()
 		                .awaitReady();
+		
+		String command = input.nextLine();
+		System.out.println(command.split(" ")[1].replace(":", ""));
+		if (command.startsWith("send "))
+			Objects.requireNonNull(
+					jda.getTextChannelById(command.split(" ")[1].replace(":", "")))
+			       .sendMessage(command.substring(command.indexOf(':') + 1))
+			       .queue();
 	}
 	
 	public static TextChannel getChannel (long id) {
