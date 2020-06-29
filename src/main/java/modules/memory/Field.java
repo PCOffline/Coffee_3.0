@@ -1,11 +1,5 @@
 package modules.memory;
 
-import org.intellij.lang.annotations.Language;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.annotation.RegEx;
 import java.util.Objects;
 
 // TODO: Debug logging
@@ -46,7 +40,6 @@ import java.util.Objects;
  * @see modules.memory.Entity
  */
 
-@SuppressWarnings("unused")
 public class Field {
 	/**
 	 * The order number required in order to consider a Field as a Header.
@@ -57,8 +50,6 @@ public class Field {
 	static final int HEADER_ORDER = 0;
 	
 	private static final String NULLABLE_HEADER = "Headers cannot be nullable.";
-	private static final String INVALID_ORDER =
-			"The order must be greater than or equal to " + Field.HEADER_ORDER;
 	private static final String INVALID_REGEX =
 			"The regex must not be empty and must " + "not include ':'.";
 	private static final String INVALID_DEFAULT_VALUE =
@@ -82,7 +73,7 @@ public class Field {
 	 * 		name.
 	 */
 	
-	@NotNull protected final String name;
+	protected final String name;
 	
 	/**
 	 * The regex pattern the {@code Field}'s {@code value} should follow when used in an
@@ -96,9 +87,6 @@ public class Field {
 	 * @see #defaultValue
 	 */
 	
-	@Language("JSRegexp")
-	@RegEx
-	@NotNull
 	protected final String regex;
 	
 	/**
@@ -140,7 +128,7 @@ public class Field {
 	 * @see #regex
 	 */
 	
-	@Nullable protected final String defaultValue;
+	protected final String defaultValue;
 	
 	/**
 	 * The {@code nullable} attribute determines whether a value can be empty ({@code
@@ -186,19 +174,12 @@ public class Field {
 	 * @see #order
 	 */
 	
-	@NotNull
-	public Field (@NotNull String name, @Nullable String regex, int order) {
-		if (order < Field.HEADER_ORDER)
-			throw new IllegalArgumentException(Field.INVALID_ORDER);
-		
+	public Field (String name, String regex, int order) {
 		if (name.isEmpty() || name.contains(":"))
 			throw new IllegalArgumentException(Field.INVALID_NAME);
 		
 		if (regex != null && (regex.isEmpty() || regex.contains(":")))
 			throw new IllegalArgumentException(Field.INVALID_REGEX);
-		
-		if (order == 0 && isNullable())
-			throw new IllegalArgumentException(NULLABLE_HEADER);
 		
 		this.name         = name;
 		this.regex        = regex != null ? regex : "^.+$";
@@ -231,21 +212,13 @@ public class Field {
 	 * @see #defaultValue
 	 */
 	
-	@NotNull
-	public Field (@NotNull String name, @Nullable String regex, int order,
-	              @Nullable String defaultValue) {
-		
-		if (order < Field.HEADER_ORDER)
-			throw new IllegalArgumentException(Field.INVALID_ORDER);
+	public Field (String name, String regex, int order, String defaultValue) {
 		
 		if (name.isEmpty() || name.contains(":"))
 			throw new IllegalArgumentException(Field.INVALID_NAME);
 		
 		if (regex != null && (regex.isEmpty() || regex.contains(":")))
 			throw new IllegalArgumentException(Field.INVALID_REGEX);
-		
-		if (order == Field.HEADER_ORDER && defaultValue != null)
-			throw new IllegalArgumentException(Field.DEFAULT_HEADER);
 		
 		this.name  = name;
 		this.regex = regex != null ? regex : "^.+$";
@@ -283,10 +256,8 @@ public class Field {
 	 * @see #nullable
 	 */
 	
-	public Field (@NotNull String name, @Nullable String regex, int order,
-	              @Nullable String defaultValue, boolean nullable) {
-		if (order < Field.HEADER_ORDER)
-			throw new IllegalArgumentException(Field.INVALID_ORDER);
+	public Field (String name, String regex, int order, String defaultValue,
+	              boolean nullable) {
 		
 		if (name.isEmpty() || name.contains(":"))
 			throw new IllegalArgumentException(Field.INVALID_NAME);
@@ -335,7 +306,6 @@ public class Field {
 	 * @return the {@link #name} of the field.
 	 */
 	
-	@NotNull
 	public String getName () {
 		return this.name;
 	}
@@ -346,7 +316,6 @@ public class Field {
 	 * @return the {@link #regex} of the field.
 	 */
 	
-	@NotNull
 	public String getRegex () {
 		return this.regex;
 	}
@@ -367,7 +336,6 @@ public class Field {
 	 * @return the {@link #defaultValue} of the field.
 	 */
 	
-	@Nullable
 	public String getDefaultValue () {
 		return this.defaultValue;
 	}
@@ -416,8 +384,6 @@ public class Field {
 	 * @implNote Does not include value comparison.
 	 */
 	
-	@Contract(value = "null -> false", pure = true)
-	@Override
 	public boolean equals (Object other) {
 		return other instanceof Field &&
 		       this.name.equals(((Field) other).name) &&

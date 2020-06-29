@@ -1,0 +1,433 @@
+<root>
+	<item name='modules.memory.Entity'>
+		<annotation name='java.lang.SuppressWarnings'>
+			<val val="&quot;unused&quot;"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity Entity(java.util.List&lt;modules.memory.EntityField&gt;, int) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity Entity(java.util.List&lt;modules.memory.EntityField&gt;, int) 1'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity Entity(java.util.List&lt;modules.memory.EntityField&gt;, int, long) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity Entity(java.util.List&lt;modules.memory.EntityField&gt;, int, long) 1'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity Entity(java.util.List&lt;modules.memory.EntityField&gt;, int, long) 2'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Long.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity boolean contains(java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity boolean contains(java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity boolean contains(java.lang.String, java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity boolean contains(java.lang.String, java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity boolean contains(java.lang.String, java.lang.String) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Entity boolean contains(modules.memory.EntityField, boolean)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity boolean contains(modules.memory.EntityField, boolean) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity boolean contains(modules.memory.Field)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity boolean contains(modules.memory.Field) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity boolean isEmpty()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity boolean isFull()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity end'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Long.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity fieldCount'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity fields'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity header'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity int getFieldCount()'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity java.lang.String getHeader()'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity java.util.List&lt;modules.memory.EntityField&gt; getFields()'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity java.util.List&lt;modules.memory.EntityField&gt; getFieldsByValue(java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Entity java.util.List&lt;modules.memory.EntityField&gt; getFieldsByValue(java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item name='modules.memory.Entity long getEnd()'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Long.MAX_VALUE"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity long getStart()'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Long.MAX_VALUE"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String, java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String, java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String, java.lang.String) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(java.lang.String, java.lang.String, java.lang.String) 2'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(modules.memory.EntityField)'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField editField(modules.memory.EntityField) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField getField(modules.memory.Field)'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField getField(modules.memory.Field) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField getFieldByName(java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField getFieldByName(java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity modules.memory.EntityField getFieldByOrder(int)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity modules.memory.EntityField getFieldByOrder(int) 0'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="0"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField getFieldByOrder(modules.memory.Field)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField getFieldByOrder(modules.memory.Field) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField removeField(java.lang.String)'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField removeField(java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField removeField(modules.memory.EntityField)'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField removeField(modules.memory.EntityField) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField removeField(modules.memory.Field)'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity modules.memory.EntityField removeField(modules.memory.Field) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Entity start'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Long.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Entity void addField(modules.memory.EntityField) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity void addField(modules.memory.Field, java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity void addField(modules.memory.Field, java.lang.String) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item name='modules.memory.Entity void onDelete(modules.memory.Entity) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity void validateFields(java.util.List&lt;modules.memory.EntityField&gt;)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity void validateFields(java.util.List&lt;modules.memory.EntityField&gt;) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Entity void validateFields(java.util.List&lt;modules.memory.EntityField&gt;, int) 1'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity void validateFields(java.util.List&lt;modules.memory.EntityField&gt;, int, long) 1'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Entity void validateFields(java.util.List&lt;modules.memory.EntityField&gt;, int, long) 2'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Long.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field'>
+		<annotation name='java.lang.SuppressWarnings'>
+			<val val="&quot;unused&quot;"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field Field(java.lang.String, java.lang.String, int) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Field Field(java.lang.String, java.lang.String, int) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item name='modules.memory.Field Field(java.lang.String, java.lang.String, int) 2'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String) 2'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="1"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String) 3'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String, boolean) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String, boolean) 1'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String, boolean) 2'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="0"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item
+		name='modules.memory.Field Field(java.lang.String, java.lang.String, int, java.lang.String, boolean) 3'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item name='modules.memory.Field Field(modules.memory.Field) 0'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Field boolean equals(java.lang.Object)'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="value" val="&quot;null -&gt; false&quot;"/>
+			<val name="pure" val="true"/>
+		</annotation>
+		<annotation name='java.lang.Override'/>
+	</item>
+	<item name='modules.memory.Field boolean isDefaultValue()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field boolean isHeader()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field boolean isNullable()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field defaultValue'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+	</item>
+	<item name='modules.memory.Field int getOrder()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field java.lang.String getDefaultValue()'>
+		<annotation name='org.jetbrains.annotations.Nullable'/>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field java.lang.String getName()'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field java.lang.String getRegex()'>
+		<annotation name='org.jetbrains.annotations.Contract'>
+			<val name="pure" val="true"/>
+		</annotation>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Field name'>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+	<item name='modules.memory.Field order'>
+		<annotation name='org.jetbrains.annotations.Range'>
+			<val name="from" val="0"/>
+			<val name="to" val="java.lang.Integer.MAX_VALUE"/>
+		</annotation>
+	</item>
+	<item name='modules.memory.Field regex'>
+		<annotation name='org.intellij.lang.annotations.Language'>
+			<val val="&quot;RegExp&quot;"/>
+		</annotation>
+		<annotation name='javax.annotation.RegEx'/>
+		<annotation name='org.jetbrains.annotations.NotNull'/>
+	</item>
+</root>
